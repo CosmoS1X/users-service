@@ -15,6 +15,17 @@
   "license": "MIT",
   "author": "Konstantin Korovin <cosmo.stan.x@gmail.com>",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "check:type": "tsc --noEmit -p tsconfig.json",
+    "clean": "rm -rf dist",
+    "build": "tsc -p tsconfig.json",
+    "start:prod": "node dist/bin/index.js",
+    "start:dev": "nodemon --exec ts-node bin/index.ts"
+  },
+  "devDependencies": {
+    "@types/node": "^24.8.0",
+    "nodemon": "^3.1.10",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.3"
   }
 }
