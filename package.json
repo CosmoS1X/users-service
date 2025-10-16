@@ -1,0 +1,20 @@
+{
+  "name": "users-service",
+  "version": "1.0.0",
+  "description": "Test task for Effective Mobile",
+  "type": "commonjs",
+  "private": true,
+  "homepage": "https://github.com/CosmoS1X/users-service#readme",
+  "bugs": {
+    "url": "https://github.com/CosmoS1X/users-service/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CosmoS1X/users-service.git"
+  },
+  "license": "MIT",
+  "author": "Konstantin Korovin <cosmo.stan.x@gmail.com>",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
