@@ -43,7 +43,11 @@
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage",
     "lint": "eslint .",
-    "lint:fix": "eslint . --fix"
+    "lint:fix": "eslint . --fix",
+    "migrate": "knex migrate:latest --verbose",
+    "migrate:rollback": "knex migrate:rollback",
+    "migrate:status": "knex migrate:status",
+    "migrate:make": "knex migrate:make"
   },
   "dependencies": {
     "dotenv": "^17.2.3",
