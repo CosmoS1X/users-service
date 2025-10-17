@@ -18,9 +18,20 @@
     "preset": "ts-jest",
     "testEnvironment": "node",
     "coverageDirectory": "coverage",
-    "coverageReporters": ["text", "lcov", "html", "text-summary"],
-    "coveragePathIgnorePatterns": ["/node_modules/", "/dist/"],
-    "moduleFileExtensions": ["ts", "js"]
+    "coverageReporters": [
+      "text",
+      "lcov",
+      "html",
+      "text-summary"
+    ],
+    "coveragePathIgnorePatterns": [
+      "/node_modules/",
+      "/dist/"
+    ],
+    "moduleFileExtensions": [
+      "ts",
+      "js"
+    ]
   },
   "scripts": {
     "clean": "rm -rf dist",
@@ -33,6 +44,13 @@
     "test:coverage": "jest --coverage",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix"
+  },
+  "dependencies": {
+    "dotenv": "^17.2.3",
+    "knex": "^3.1.0",
+    "objection": "^3.1.5",
+    "pg": "^8.16.3",
+    "sqlite3": "^5.1.7"
   },
   "devDependencies": {
     "@types/jest": "^30.0.0",
