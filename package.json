@@ -36,8 +36,8 @@
   "scripts": {
     "clean": "rm -rf dist",
     "build": "tsc -p tsconfig.json",
-    "start:prod": "node dist/bin/index.js",
-    "start:dev": "nodemon --exec ts-node bin/index.ts",
+    "start:prod": "DEBUG=* node dist/bin/index.js",
+    "start:dev": "DEBUG=server:* nodemon --exec ts-node bin/index.ts",
     "check:type": "tsc --noEmit -p tsconfig.json",
     "test": "jest",
     "test:watch": "jest --watch",
@@ -50,14 +50,20 @@
     "migrate:make": "knex migrate:make"
   },
   "dependencies": {
+    "debug": "^4.4.3",
     "dotenv": "^17.2.3",
+    "express": "^5.1.0",
     "knex": "^3.1.0",
+    "morgan": "^1.10.1",
     "objection": "^3.1.5",
     "pg": "^8.16.3",
     "sqlite3": "^5.1.7"
   },
   "devDependencies": {
+    "@types/debug": "^4.1.12",
+    "@types/express": "^5.0.3",
     "@types/jest": "^30.0.0",
+    "@types/morgan": "^1.9.10",
     "@types/node": "^24.8.0",
     "@typescript-eslint/eslint-plugin": "^7.18.0",
     "@typescript-eslint/parser": "^7.18.0",
