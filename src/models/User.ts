@@ -1,6 +1,6 @@
 import type { JSONSchema } from 'objection';
 import { Model } from '../database';
-import { encrypt } from '@/lib/secure';
+import { encrypt } from '../lib/secure';
 
 export class User extends Model {
   id!: number;
@@ -30,7 +30,7 @@ export class User extends Model {
       properties: {
         id: { type: 'integer' },
         fullName: { type: 'string', minLength: 3, maxLength: 255 },
-        birthDate: { type: ['string', 'null'], format: 'date-time' },
+        birthDate: { type: ['string', 'null'], format: 'date' },
         email: { type: 'string', format: 'email', maxLength: 255 },
         password: { type: 'string', minLength: 5, maxLength: 255 },
         role: { type: 'string', enum: ['user', 'admin'] },
