@@ -1,6 +1,7 @@
 import 'dotenv/config';
 import debug from 'debug';
 import app from '../src';
+import { db } from '../src/database';
 
 const port = process.env.PORT || 5000;
 const log = debug('server:log');
@@ -14,3 +15,7 @@ app
     errorLog('❌ Server error:', error.message);
     process.exit(1);
   });
+
+db.raw('SELECT 1')
+  .then(() => log('✅ Database connected'))
+  .catch((error) => errorLog('❌ Database connection failed:', error.message));
