@@ -5,14 +5,12 @@
     "target": "es5",
     "module": "commonjs",
     "outDir": "dist",
+    "typeRoots": ["./src/types"],
     "sourceMap": true,
     "declaration": true,
     "skipLibCheck": true,
     "moduleResolution": "node",
-    "forceConsistentCasingInFileNames": true,
-    "paths": {
-      "@/*": ["./src/*"]
-    }
+    "forceConsistentCasingInFileNames": true
   },
   "include": ["src", "bin"],
   "exclude": ["*.test.ts"]
