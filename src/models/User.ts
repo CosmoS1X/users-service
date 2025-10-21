@@ -7,7 +7,7 @@ export class User extends Model {
 
   fullName!: string;
 
-  birthDate!: Date | null;
+  birthDate!: string | null;
 
   email!: string;
 
@@ -17,7 +17,7 @@ export class User extends Model {
 
   isActive!: boolean;
 
-  createdAt!: Date;
+  createdAt!: string;
 
   static get tableName() {
     return 'users';
