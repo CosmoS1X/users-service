@@ -12,7 +12,10 @@ export default () => ({
     const user = await User.query().findById(id);
 
     if (!user) {
-      res.status(404).json({ error: 'UserNotFound', message: `User with ID ${id} not found` });
+      res.status(404).json({
+        error: 'UserNotFound',
+        message: `User with ID ${id} not found`,
+      });
 
       return;
     }
@@ -41,30 +44,16 @@ export default () => ({
     const userToBlock = await User.query().findById(id);
 
     if (!userToBlock) {
-      res.status(404).json({ error: 'UserNotFound', message: `User with ID ${id} not found` });
+      res.status(404).json({
+        error: 'UserNotFound',
+        message: `User with ID ${id} not found`,
+      });
 
       return;
     }
 
     await userToBlock.$query().patch({ isActive: false });
 
-    res.status(200).json(userToBlock);
-  },
-  delete: async (req: Request, res: Response) => {
-    const { id } = req.params;
-    const userToDelete = await User.query().findById(id);
-
-    if (!userToDelete) {
-      res.status(404).json({
-        error: 'UserNotFound',
-        message: `User with ID ${id} not found or already deleted`,
-      });
-
-      return;
-    }
-
-    await userToDelete.$query().deleteById(id);
-
-    res.status(204).end();
+    return res.status(200).json(userToBlock);
   },
 });
