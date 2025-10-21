@@ -1,5 +1,7 @@
 # users-service
 
+[![Node.js CI](https://github.com/CosmoS1X/users-service/actions/workflows/node.js.yml/badge.svg)](https://github.com/CosmoS1X/users-service/actions/workflows/node.js.yml)
+
 Нужно разработать сервис работы с пользователями. Модель пользователя должна содержать:
 
     • ФИО
