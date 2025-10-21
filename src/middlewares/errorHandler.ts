@@ -6,8 +6,9 @@ import {
   ForeignKeyViolationError,
 } from 'objection';
 
-export const errorHandler = (error: Error, req: Request, res: Response, _next: NextFunction) => {
-  if (process.env.NODE_ENV === 'development') {
+/* istanbul ignore next */
+export default (error: Error, req: Request, res: Response, _next: NextFunction) => {
+  if (process.env.NODE_ENV !== 'production') {
     // eslint-disable-next-line no-console
     console.error('Error handler middleware:', error);
   }

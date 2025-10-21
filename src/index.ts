@@ -2,7 +2,7 @@ import express from 'express';
 import { morganConfig, sessionConfig } from './configs';
 import passport from './lib/passport';
 import routers from './routes';
-import { errorHandler } from './middlewares';
+import errorHandler from './middlewares/errorHandler';
 
 const app = express();
 
