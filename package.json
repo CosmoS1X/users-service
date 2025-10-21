@@ -17,6 +17,14 @@
   "jest": {
     "preset": "ts-jest",
     "testEnvironment": "node",
+    "setupFilesAfterEnv": [
+      "<rootDir>/__tests__/setup.ts"
+    ],
+    "testPathIgnorePatterns": [
+      "/setup.ts",
+      "/helpers.ts",
+      "/endpoints.ts"
+    ],
     "coverageDirectory": "coverage",
     "coverageReporters": [
       "text",
@@ -24,9 +32,15 @@
       "html",
       "text-summary"
     ],
+    "collectCoverageFrom": [
+      "src/**/*.(t|j)s"
+    ],
+    
     "coveragePathIgnorePatterns": [
       "/node_modules/",
-      "/dist/"
+      "/dist/",
+      "/types/",
+      "/migrations/"
     ],
     "moduleFileExtensions": [
       "ts",
