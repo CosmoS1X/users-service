@@ -21,6 +21,11 @@ export default () => ({
           return;
         }
 
+        if (!user.isActive) {
+          res.status(403).json({ error: 'Forbidden', message: 'Access denied' });
+          return;
+        }
+
         res.status(200).json(user);
       });
     })(req, res, next);
