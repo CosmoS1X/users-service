@@ -54,6 +54,6 @@ export default () => ({
 
     await userToBlock.$query().patch({ isActive: false });
 
-    return res.status(200).json(userToBlock);
+    res.status(200).json(userToBlock);
   },
 });
